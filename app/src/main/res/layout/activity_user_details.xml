@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.ashthebest.myauth.UserDetailsActivity">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_pro_pic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/icon_camera" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="UserName"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/uva_handle_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Uva Handle"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/cf_handle_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CF Handle"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/codechef_handle_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Codechef Handle"
+        android:padding="8dp" />
+
+</LinearLayout>

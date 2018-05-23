@@ -48,25 +48,25 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
-        if(email.isEmpty()) {
+        if (email.isEmpty()) {
             editTextEmail.setError("Email is required");
             editTextEmail.requestFocus();
             return;
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmail.setError("Please Enter a valid Email");
             editTextEmail.requestFocus();
             return;
         }
 
-        if(password.isEmpty()) {
+        if (password.isEmpty()) {
             editTextPassword.setError("Password is required");
             editTextPassword.requestFocus();
             return;
         }
 
-        if(password.length() < 6) {
+        if (password.length() < 6) {
             editTextPassword.setError("Minimum length of password should be 6");
             editTextPassword.requestFocus();
             return;
@@ -78,16 +78,15 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
-                if(task.isSuccessful()) {
+                if (task.isSuccessful()) {
                     finish();
-                    startActivity(new Intent(SignUpActivity.this, ProActivity.class));
-                }
-                else {
+                    //startActivity(new Intent(SignUpActivity.this, ProActivity.class));
+                    startActivity(new Intent(SignUpActivity.this, PersonalDetailsActivity.class));
+                } else {
 
-                    if(task.getException() instanceof FirebaseAuthUserCollisionException) {
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                         Toast.makeText(getApplicationContext(), "You are already registered", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
+                    } else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -97,13 +96,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        if( v.getId() == buttonSignUp.getId() ) {
+        if (v.getId() == buttonSignUp.getId()) {
             registerUser();
-        }
-
-        else if( v.getId() == textViewLogin.getId() ) {
+        } else if (v.getId() == textViewLogin.getId()) {
             finish();
-            startActivity(new Intent(this, MainActivity.class));
+            //startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, UniversityListActivity.class));
         }
     }
 }

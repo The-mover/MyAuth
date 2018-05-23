@@ -99,8 +99,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStart();
 
         if( mAuth.getCurrentUser() != null ) {
+
+            //startActivity(new Intent(MainActivity.this, ProActivity.class));
+            startActivity(new Intent(MainActivity.this, UniversityListActivity.class));
             finish();
-            startActivity(new Intent(MainActivity.this, ProActivity.class));
         }
     }
 
