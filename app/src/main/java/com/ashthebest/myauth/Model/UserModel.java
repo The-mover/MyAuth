@@ -6,6 +6,7 @@ package com.ashthebest.myauth.Model;
 
 public class UserModel {
     private String userName;
+    private String universityName;
     private String userId;
     private String profilePic;
     private String uvaHandle;
@@ -15,8 +16,9 @@ public class UserModel {
     public UserModel() {
     }
 
-    public UserModel(String userName, String userId, String profilePic, String uvaHandle, String cfHandle, String codechefHandle) {
+    public UserModel(String userName, String universityName, String userId, String profilePic, String uvaHandle, String cfHandle, String codechefHandle) {
         this.userName = userName;
+        this.universityName = universityName;
         this.userId = userId;
         this.profilePic = profilePic;
         this.uvaHandle = uvaHandle;
@@ -30,6 +32,14 @@ public class UserModel {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getUniversityName() {
+        return universityName;
+    }
+
+    public void setUniversityName(String universityName) {
+        this.universityName = universityName;
     }
 
     public String getUserId() {

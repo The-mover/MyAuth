@@ -1,13 +1,11 @@
 package com.ashthebest.myauth.ViewHolder;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.ashthebest.myauth.ProActivity;
 import com.ashthebest.myauth.R;
 import com.ashthebest.myauth.UserListActivity;
 
@@ -25,7 +23,7 @@ public class UniversityListHolder extends RecyclerView.ViewHolder {
         universityNameField = itemView.findViewById(R.id.university_name);
     }
 
-    public void setUniversityName(final Activity activity, String universityName) {
+    public void setUniversityName(final Activity activity, final String universityName) {
         universityNameField.setText(universityName);
 
         universityNameField.setOnClickListener(new View.OnClickListener() {
@@ -36,14 +34,11 @@ public class UniversityListHolder extends RecyclerView.ViewHolder {
                     intent.putExtra("UNIVERSITY_KEY", universityKey);
                     activity.startActivity(intent);
                 }
-
-
             }
         });
     }
 
-    public void setUniversityKey(String key) {
+    public void setUniversityKey(String key){
         universityKey = key;
     }
-
 }

@@ -49,25 +49,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
-        if(email.isEmpty()) {
+        if (email.isEmpty()) {
             editTextEmail.setError("Email is required");
             editTextEmail.requestFocus();
             return;
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmail.setError("Please Enter a valid Email");
             editTextEmail.requestFocus();
             return;
         }
 
-        if(password.isEmpty()) {
+        if (password.isEmpty()) {
             editTextPassword.setError("Password is required");
             editTextPassword.requestFocus();
             return;
         }
 
-        if(password.length() < 6) {
+        if (password.length() < 6) {
             editTextPassword.setError("Minimum length of password should be 6");
             editTextPassword.requestFocus();
             return;
@@ -81,13 +81,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 progressBar.setVisibility(View.GONE);
 
-                if( task.isSuccessful() ) {
+                if (task.isSuccessful()) {
                     finish();
-                    Intent intent = new Intent(MainActivity.this, ProActivity.class);
+                    Intent intent = new Intent(MainActivity.this, UniversityListActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -98,11 +97,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onStart() {
         super.onStart();
 
-        if( mAuth.getCurrentUser() != null ) {
+        if (mAuth.getCurrentUser() != null) {
 
             //startActivity(new Intent(MainActivity.this, ProActivity.class));
             startActivity(new Intent(MainActivity.this, UniversityListActivity.class));
-            finish();
+            //finish();
         }
     }
 
@@ -110,11 +109,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         /// This one will take you to the SignUp Activity
-        if( v.getId() == textViewSignUp.getId() ) {
-            finish();
+        if (v.getId() == textViewSignUp.getId()) {
+            //finish();
             startActivity(new Intent(this, SignUpActivity.class));
-        }
-        else if( v.getId() == buttonLogin.getId() ) {
+        } else if (v.getId() == buttonLogin.getId()) {
             userLogin();
         }
     }

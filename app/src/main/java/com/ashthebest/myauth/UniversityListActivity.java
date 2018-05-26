@@ -1,10 +1,13 @@
 package com.ashthebest.myauth;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.ashthebest.myauth.Model.UniversityModel;
 import com.ashthebest.myauth.ViewHolder.UniversityListHolder;
@@ -17,12 +20,21 @@ public class UniversityListActivity extends AppCompatActivity {
     private RecyclerView mUniversityRecyclerView;
     private DatabaseReference mUniversityListRef;
 
+    private Button profileBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_university_list);
 
         initView();
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UniversityListActivity.this, PersonalDetailsActivity.class).putExtra("DATA", 1));
+            }
+        });
 
         FirebaseRecyclerAdapter<UniversityModel, UniversityListHolder> adapter = new FirebaseRecyclerAdapter<UniversityModel, UniversityListHolder>(
                 UniversityModel.class,
@@ -32,10 +44,8 @@ public class UniversityListActivity extends AppCompatActivity {
         ) {
             @Override
             protected void populateViewHolder(UniversityListHolder viewHolder, UniversityModel model, int position) {
-                Log.v("DatabaseResponse", model.getUniversityName());
-                String name = model.getUniversityName();
                 viewHolder.setUniversityName(UniversityListActivity.this, model.getUniversityName());
-                viewHolder.setUniversityKey(model.getUserListKey());
+                viewHolder.setUniversityKey(model.getUniversityKey());
             }
         };
 
@@ -47,5 +57,7 @@ public class UniversityListActivity extends AppCompatActivity {
         mUniversityRecyclerView = findViewById(R.id.university_recycleview);
         mUniversityListRef = FirebaseDatabase.getInstance().getReference().child("universityList");
         mUniversityRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        profileBtn = findViewById(R.id.profile);
     }
 }

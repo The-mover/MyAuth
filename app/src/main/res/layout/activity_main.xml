@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
     android:orientation="vertical"
     tools:context="com.ashthebest.myauth.MainActivity">
 
@@ -12,21 +13,22 @@
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
-        <ImageView
-            android:layout_width="85dp"
-            android:layout_height="100dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coder's App"
+            android:textSize="65sp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/logo"
-            />
+            android:textColor="@color/white"
+            android:fontFamily="cursive"/>
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/colorPrimary">
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,21 +43,29 @@
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:drawableLeft="@drawable/mail"
+                android:drawablePadding="15dp"
+                android:drawableTint="@color/white"
                 android:fontFamily="sans-serif"
-                android:hint="email"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:paddingBottom="15dp"
-                android:textColorHint="@color/colorAccent" />
+                android:textColorHint="@color/white" />
 
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:drawableLeft="@drawable/lock"
+                android:drawablePadding="15dp"
+                android:drawableTint="@color/white"
                 android:fontFamily="sans-serif"
-                android:hint="password"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:paddingBottom="15dp"
-                android:textColorHint="@color/colorAccent" />
+                android:textColorHint="@color/white" />
 
             <Button
                 android:id="@+id/buttonLogin"
@@ -66,7 +76,7 @@
                 android:background="@drawable/button1"
                 android:text="Login"
                 android:textAllCaps="false"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/textViewSignup"
@@ -76,7 +86,7 @@
                 android:text="Don't have account? Sign Up"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/white" />
 
 
         </LinearLayout>

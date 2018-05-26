@@ -6,14 +6,14 @@ package com.ashthebest.myauth.Model;
 
 public class UniversityModel {
     private String universityName;
-    private String userListKey;
+    private String universityKey;
 
     public UniversityModel() {
     }
 
-    public UniversityModel(String universityName, String userListKey) {
+    public UniversityModel(String universityName, String universityKey) {
         this.universityName = universityName;
-        this.userListKey = userListKey;
+        this.universityKey = universityKey;
     }
 
     public String getUniversityName() {
@@ -24,11 +24,11 @@ public class UniversityModel {
         this.universityName = universityName;
     }
 
-    public String getUserListKey() {
-        return userListKey;
+    public String getUniversityKey() {
+        return universityKey;
     }
 
-    public void setUserListKey(String userListKey) {
-        this.userListKey = userListKey;
+    public void setUniversityKey(String universityKey) {
+        this.universityKey = universityKey;
     }
 }
