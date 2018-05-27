@@ -101,7 +101,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         } else if (v.getId() == textViewLogin.getId()) {
             //finish();
             //startActivity(new Intent(this, MainActivity.class));
-            startActivity(new Intent(this, UniversityListActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
         }
     }
 }

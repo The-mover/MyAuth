@@ -12,7 +12,25 @@
         android:id="@+id/profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile" />
+        android:text="Edit Profile" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log out"/>
+
+    <Button
+        android:id="@+id/viewprofile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Profile"/>
+
+    <Button
+        android:id="@+id/showlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show List"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/university_recycleview"

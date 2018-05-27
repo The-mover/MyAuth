@@ -41,7 +41,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class PersonalDetailsActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE = 1;
-    private ImageView profilePic;
+    private CircleImageView profilePic;
     private EditText userNameField;
     private EditText universityNameField;
     private EditText uvaHandleField;

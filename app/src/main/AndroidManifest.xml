@@ -20,7 +20,8 @@
         <activity android:name=".UniversityListActivity" />
         <activity android:name=".UserListActivity" />
         <activity android:name=".UserDetailsActivity" />
-        <activity android:name=".PersonalDetailsActivity"></activity>
+        <activity android:name=".PersonalDetailsActivity" />
+        <activity android:name=".ShowUniversityActivity"></activity>
     </application>
 
 </manifest>
